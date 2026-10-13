@@ -19,7 +19,7 @@ navLinks.querySelectorAll('a').forEach((a) =>
 
 // Reveal on scroll
 const toReveal = document.querySelectorAll(
-  '.section-head, .about-text, .about-stats, .ach-card, .gal-item, .join-card'
+  '.section-head, .about-text, .about-stats, .ach-card, .gal-item, .why-card, .join-card'
 );
 toReveal.forEach((el) => el.classList.add('reveal'));
 

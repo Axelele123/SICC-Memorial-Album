@@ -215,6 +215,20 @@ a { color: inherit; text-decoration: none; }
 .gal-ph { display: none; font-size: 2rem; color: #fff; opacity: 0.85; }
 .gal-item.is-empty .gal-ph { display: block; }
 
+/* ---------- Why Join ---------- */
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+.why-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 36px 28px; text-align: center; box-shadow: var(--shadow); transition: 0.3s;
+}
+.why-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -24px rgba(42,75,215,0.4); }
+.why-icon {
+  display: inline-grid; place-items: center; width: 64px; height: 64px; margin-bottom: 16px;
+  border-radius: 50%; background: var(--grad-soft); font-size: 1.8rem;
+}
+.why-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+.why-card p { color: var(--muted); font-size: 0.96rem; }
+
 /* ---------- Join ---------- */
 .join-card {
   position: relative; overflow: hidden; text-align: center; color: #fff;
