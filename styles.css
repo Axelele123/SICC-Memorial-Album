@@ -101,15 +101,54 @@ a { color: inherit; text-decoration: none; }
   display: grid; place-items: center;
   text-align: center;
   color: #fff;
-  background: var(--grad);
   overflow: hidden;
   padding: 120px 20px 80px;
+  /* Gradient animasi putih-biru-ungu yang bergeser */
+  background: linear-gradient(130deg, #2a4bd7, #6a2cc0, #5a78ff, #9d6bff, #2a4bd7);
+  background-size: 300% 300%;
+  animation: gradientShift 16s ease infinite;
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .hero::before {
-  content: ""; position: absolute; inset: 0;
+  content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 45%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12), transparent 40%);
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.20), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.14), transparent 40%);
+  animation: glowPulse 8s ease-in-out infinite;
+}
+@keyframes glowPulse { 0%,100%{opacity:0.7} 50%{opacity:1} }
+
+/* ---- Not musik mengambang ---- */
+.floating-notes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
+.fnote {
+  position: absolute; bottom: -40px; color: rgba(255,255,255,0.5);
+  font-size: 2rem; animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.7; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+.fnote:nth-child(1)  { left: 6%;  font-size: 1.6rem; animation-duration: 14s; animation-delay: 0s; }
+.fnote:nth-child(2)  { left: 15%; font-size: 2.4rem; animation-duration: 18s; animation-delay: 3s; }
+.fnote:nth-child(3)  { left: 24%; font-size: 1.3rem; animation-duration: 12s; animation-delay: 6s; }
+.fnote:nth-child(4)  { left: 33%; font-size: 2rem;   animation-duration: 20s; animation-delay: 1s; }
+.fnote:nth-child(5)  { left: 42%; font-size: 2.8rem; animation-duration: 22s; animation-delay: 5s; }
+.fnote:nth-child(6)  { left: 51%; font-size: 1.5rem; animation-duration: 15s; animation-delay: 2s; }
+.fnote:nth-child(7)  { left: 60%; font-size: 2.2rem; animation-duration: 17s; animation-delay: 7s; }
+.fnote:nth-child(8)  { left: 68%; font-size: 1.4rem; animation-duration: 13s; animation-delay: 4s; }
+.fnote:nth-child(9)  { left: 76%; font-size: 2rem;   animation-duration: 19s; animation-delay: 0s; }
+.fnote:nth-child(10) { left: 84%; font-size: 1.7rem; animation-duration: 16s; animation-delay: 6s; }
+.fnote:nth-child(11) { left: 90%; font-size: 2.3rem; animation-duration: 21s; animation-delay: 2s; }
+.fnote:nth-child(12) { left: 96%; font-size: 1.4rem; animation-duration: 14s; animation-delay: 8s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero, .hero::before, .fnote { animation: none; }
+  .fnote { opacity: 0.4; }
 }
 .hero-staff {
   position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
@@ -214,6 +253,37 @@ a { color: inherit; text-decoration: none; }
 .gal-item img { width: 100%; height: 100%; object-fit: cover; }
 .gal-ph { display: none; font-size: 2rem; color: #fff; opacity: 0.85; }
 .gal-item.is-empty .gal-ph { display: block; }
+
+/* ---------- Pesan & Kesan (marquee continuous) ---------- */
+.messages { background: var(--ice); overflow: hidden; }
+.marquee {
+  position: relative; width: 100%; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track { display: flex; width: max-content; animation: marqueeScroll 40s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.msg-group { display: flex; gap: 24px; padding: 10px 12px; }
+.msg-group + .msg-group { padding-left: 0; }
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.msg-card {
+  flex: 0 0 340px; max-width: 340px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 28px 26px; box-shadow: var(--shadow); position: relative; margin: 0;
+}
+.msg-card .quote-mark {
+  position: absolute; top: 14px; right: 20px; font-size: 2.4rem;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; opacity: 0.35; font-family: Georgia, serif;
+}
+.msg-card p { color: var(--ink); font-size: 1rem; line-height: 1.6; margin-bottom: 18px; }
+.msg-card figcaption { display: flex; flex-direction: column; border-top: 1px solid var(--line); padding-top: 14px; }
+.msg-card figcaption strong { font-size: 1.05rem; }
+.msg-card figcaption span { color: var(--purple); font-size: 0.85rem; font-weight: 500; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
 /* ---------- Why Join ---------- */
 .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }

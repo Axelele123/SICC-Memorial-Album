@@ -26,6 +26,7 @@
         <a href="#about">Tentang</a>
         <a href="#achievements">Prestasi</a>
         <a href="#gallery">Galeri</a>
+        <a href="#messages">Pesan</a>
         <a href="#why">Mengapa</a>
         <a href="#join">Bergabung</a>
         <a href="#contact">Kontak</a>
@@ -36,6 +37,21 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero" id="hero">
+    <!-- Not musik mengambang (animated) -->
+    <div class="floating-notes" aria-hidden="true">
+      <span class="fnote">&#9833;</span>
+      <span class="fnote">&#9834;</span>
+      <span class="fnote">&#9835;</span>
+      <span class="fnote">&#9839;</span>
+      <span class="fnote">&#119070;</span>
+      <span class="fnote">&#9834;</span>
+      <span class="fnote">&#9833;</span>
+      <span class="fnote">&#9835;</span>
+      <span class="fnote">&#9838;</span>
+      <span class="fnote">&#9834;</span>
+      <span class="fnote">&#9833;</span>
+      <span class="fnote">&#9839;</span>
+    </div>
     <div class="hero-staff" aria-hidden="true">
       <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
         <g stroke="rgba(255,255,255,0.35)" stroke-width="1.5">
@@ -234,6 +250,93 @@
         <div class="gal-item"><img src="" alt="Galeri 2" onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" /><span class="gal-ph">&#9834;</span></div>
         <div class="gal-item"><img src="" alt="Galeri 3" onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" /><span class="gal-ph">&#9834;</span></div>
         <div class="gal-item"><img src="" alt="Galeri 4" onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" /><span class="gal-ph">&#9834;</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PESAN & KESAN (continuous) ================= -->
+  <section class="section messages" id="messages">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">&#128172; Pesan &amp; Kesan</span>
+        <h2>Kata Mereka</h2>
+        <p class="section-desc">
+          Pesan &amp; kesan dari keluarga Paramabira @Semarang. Kartu bergerak terus — arahkan kursor untuk berhenti sejenak.
+        </p>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         CARA EDIT PESAN & KESAN:
+         Ganti isi tiap <figure class="msg-card">:
+           - <p> ... </p>  = isi pesan/kesan
+           - <strong>Nama</strong> = nama pengirim
+           - <span> ... </span> = peran / angkatan
+         Tambah / hapus kartu bebas. Agar animasi mulus, isi kedua track
+         (track asli dan track "duplikat" yang bertanda aria-hidden) dengan
+         kartu yang SAMA.
+         ================================================================ -->
+    <div class="marquee" id="msgMarquee">
+      <div class="marquee-track">
+
+        <!-- ===== TRACK 1 (asli) ===== -->
+        <div class="msg-group">
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Paramabira itu rumah kedua. Di sini aku belajar bukan cuma nyanyi, tapi juga disiplin dan kerja sama.</p>
+            <figcaption><strong>[Nama]</strong><span>Anggota &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Setiap latihan selalu seru. Harmoni yang kita bangun bareng bikin semua lelah jadi worth it.</p>
+            <figcaption><strong>[Nama]</strong><span>Sopran &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Bangga bisa tampil mewakili kampus. Terima kasih Paramabira sudah jadi panggung pertamaku.</p>
+            <figcaption><strong>[Nama]</strong><span>Tenor &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Kekeluargaannya kuat banget. Dari welcoming party sampai kompetisi, semua dilalui bareng.</p>
+            <figcaption><strong>[Nama]</strong><span>Alto &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Join Paramabira keputusan terbaik selama kuliah. Skill vokal naik, teman nambah, pengalaman melimpah.</p>
+            <figcaption><strong>[Nama]</strong><span>Bass &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+        </div>
+
+        <!-- ===== TRACK 2 (duplikat, untuk loop mulus) ===== -->
+        <div class="msg-group" aria-hidden="true">
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Paramabira itu rumah kedua. Di sini aku belajar bukan cuma nyanyi, tapi juga disiplin dan kerja sama.</p>
+            <figcaption><strong>[Nama]</strong><span>Anggota &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Setiap latihan selalu seru. Harmoni yang kita bangun bareng bikin semua lelah jadi worth it.</p>
+            <figcaption><strong>[Nama]</strong><span>Sopran &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Bangga bisa tampil mewakili kampus. Terima kasih Paramabira sudah jadi panggung pertamaku.</p>
+            <figcaption><strong>[Nama]</strong><span>Tenor &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Kekeluargaannya kuat banget. Dari welcoming party sampai kompetisi, semua dilalui bareng.</p>
+            <figcaption><strong>[Nama]</strong><span>Alto &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+          <figure class="msg-card">
+            <span class="quote-mark">&#10077;</span>
+            <p>Join Paramabira keputusan terbaik selama kuliah. Skill vokal naik, teman nambah, pengalaman melimpah.</p>
+            <figcaption><strong>[Nama]</strong><span>Bass &mdash; Angkatan [tahun]</span></figcaption>
+          </figure>
+        </div>
+
       </div>
     </div>
   </section>
