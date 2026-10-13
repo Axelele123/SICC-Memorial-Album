@@ -26,9 +26,9 @@
         <a href="#about">Tentang</a>
         <a href="#achievements">Prestasi</a>
         <a href="#gallery">Galeri</a>
-        <a href="#messages">Pesan</a>
         <a href="#why">Mengapa</a>
         <a href="#join">Bergabung</a>
+        <a href="pesan.html">Pesan &amp; Kesan</a>
         <a href="#contact">Kontak</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Buka menu">&#9776;</button>
@@ -254,93 +254,6 @@
     </div>
   </section>
 
-  <!-- ================= PESAN & KESAN (continuous) ================= -->
-  <section class="section messages" id="messages">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">&#128172; Pesan &amp; Kesan</span>
-        <h2>Kata Mereka</h2>
-        <p class="section-desc">
-          Pesan &amp; kesan dari keluarga Paramabira @Semarang. Kartu bergerak terus — arahkan kursor untuk berhenti sejenak.
-        </p>
-      </div>
-    </div>
-
-    <!-- ================================================================
-         CARA EDIT PESAN & KESAN:
-         Ganti isi tiap <figure class="msg-card">:
-           - <p> ... </p>  = isi pesan/kesan
-           - <strong>Nama</strong> = nama pengirim
-           - <span> ... </span> = peran / angkatan
-         Tambah / hapus kartu bebas. Agar animasi mulus, isi kedua track
-         (track asli dan track "duplikat" yang bertanda aria-hidden) dengan
-         kartu yang SAMA.
-         ================================================================ -->
-    <div class="marquee" id="msgMarquee">
-      <div class="marquee-track">
-
-        <!-- ===== TRACK 1 (asli) ===== -->
-        <div class="msg-group">
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Paramabira itu rumah kedua. Di sini aku belajar bukan cuma nyanyi, tapi juga disiplin dan kerja sama.</p>
-            <figcaption><strong>[Nama]</strong><span>Anggota &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Setiap latihan selalu seru. Harmoni yang kita bangun bareng bikin semua lelah jadi worth it.</p>
-            <figcaption><strong>[Nama]</strong><span>Sopran &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Bangga bisa tampil mewakili kampus. Terima kasih Paramabira sudah jadi panggung pertamaku.</p>
-            <figcaption><strong>[Nama]</strong><span>Tenor &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Kekeluargaannya kuat banget. Dari welcoming party sampai kompetisi, semua dilalui bareng.</p>
-            <figcaption><strong>[Nama]</strong><span>Alto &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Join Paramabira keputusan terbaik selama kuliah. Skill vokal naik, teman nambah, pengalaman melimpah.</p>
-            <figcaption><strong>[Nama]</strong><span>Bass &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-        </div>
-
-        <!-- ===== TRACK 2 (duplikat, untuk loop mulus) ===== -->
-        <div class="msg-group" aria-hidden="true">
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Paramabira itu rumah kedua. Di sini aku belajar bukan cuma nyanyi, tapi juga disiplin dan kerja sama.</p>
-            <figcaption><strong>[Nama]</strong><span>Anggota &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Setiap latihan selalu seru. Harmoni yang kita bangun bareng bikin semua lelah jadi worth it.</p>
-            <figcaption><strong>[Nama]</strong><span>Sopran &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Bangga bisa tampil mewakili kampus. Terima kasih Paramabira sudah jadi panggung pertamaku.</p>
-            <figcaption><strong>[Nama]</strong><span>Tenor &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Kekeluargaannya kuat banget. Dari welcoming party sampai kompetisi, semua dilalui bareng.</p>
-            <figcaption><strong>[Nama]</strong><span>Alto &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-          <figure class="msg-card">
-            <span class="quote-mark">&#10077;</span>
-            <p>Join Paramabira keputusan terbaik selama kuliah. Skill vokal naik, teman nambah, pengalaman melimpah.</p>
-            <figcaption><strong>[Nama]</strong><span>Bass &mdash; Angkatan [tahun]</span></figcaption>
-          </figure>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ================= WHY JOIN ================= -->
   <section class="section why" id="why">
     <div class="container">
@@ -365,6 +278,39 @@
           <h3>Kompetisi &amp; Panggung</h3>
           <p>Mewakili kampus dalam berbagai kompetisi dan tampil di beragam acara, dari kampus hingga nasional.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KALENDER (TimeTree) ================= -->
+  <section class="section calendar" id="calendar">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">&#128197; Agenda</span>
+        <h2>Kalender Kegiatan</h2>
+        <p class="section-desc">
+          Jadwal latihan, kompetisi, dan acara Paramabira @Semarang — selalu update lewat TimeTree.
+        </p>
+      </div>
+      <div class="calendar-card">
+        <span class="cal-icon">&#128198;</span>
+        <h3>Lihat Agenda Lengkap di TimeTree</h3>
+        <p>Klik tombol di bawah untuk membuka kalender kegiatan kami. Kamu bisa ikuti agar tidak ketinggalan jadwal.</p>
+        <!-- Link kalender TimeTree Paramabira @Semarang -->
+        <a href="https://timetr.ee/s/7WDknTsVELLNx06DI9Vv5xvPtDJnaN5i?from=whatsapp"
+           class="btn btn-primary" target="_blank" rel="noopener">Buka Kalender TimeTree &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA PESAN & KESAN ================= -->
+  <section class="section pesan-cta" id="pesan-cta">
+    <div class="container">
+      <div class="pesan-banner">
+        <div class="pesan-notes" aria-hidden="true">&#9833; &#9834; &#9835; &#9839; &#9834;</div>
+        <h2>Pesan &amp; Kesan</h2>
+        <p>Baca cerita, pesan, dan kesan hangat dari keluarga besar Paramabira @Semarang.</p>
+        <a href="pesan.html" class="btn btn-primary">Lihat Pesan &amp; Kesan &#8594;</a>
       </div>
     </div>
   </section>

@@ -92,6 +92,8 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-links a:hover { color: var(--ink); }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--ink); font-weight: 600; }
+.nav-links a.active::after { width: 100%; }
 .nav-toggle { display: none; background: none; border: 0; font-size: 1.5rem; color: var(--blue); cursor: pointer; }
 
 /* ---------- Hero ---------- */
@@ -283,7 +285,34 @@ a { color: inherit; text-decoration: none; }
 .msg-card figcaption { display: flex; flex-direction: column; border-top: 1px solid var(--line); padding-top: 14px; }
 .msg-card figcaption strong { font-size: 1.05rem; }
 .msg-card figcaption span { color: var(--purple); font-size: 0.85rem; font-weight: 500; }
+.marquee.reverse { margin-top: 24px; }
+.marquee.reverse .marquee-track { animation-name: marqueeScrollRev; animation-duration: 46s; }
+@keyframes marqueeScrollRev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.msg-card.alt { background: linear-gradient(135deg, #fff 0%, #f3efff 100%); }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* ---------- Page hero (sub-page header) ---------- */
+.page-hero {
+  position: relative; overflow: hidden; color: #fff; text-align: center;
+  padding: 150px 20px 90px;
+  background: linear-gradient(130deg, #2a4bd7, #6a2cc0, #5a78ff, #9d6bff, #2a4bd7);
+  background-size: 300% 300%;
+  animation: gradientShift 16s ease infinite;
+}
+.page-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 50%);
+}
+.page-hero-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+.page-hero-title {
+  font-size: clamp(2.6rem, 8vw, 5rem); font-weight: 700; letter-spacing: 1px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.25); margin: 6px 0 4px;
+}
+.page-hero .hero-sub { margin-bottom: 28px; }
+@media (prefers-reduced-motion: reduce) { .page-hero { animation: none; } }
 
 /* ---------- Why Join ---------- */
 .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
@@ -298,6 +327,33 @@ a { color: inherit; text-decoration: none; }
 }
 .why-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
 .why-card p { color: var(--muted); font-size: 0.96rem; }
+
+/* ---------- Kalender (TimeTree) ---------- */
+.calendar { background: var(--ice); }
+.calendar-card {
+  max-width: 620px; margin: 0 auto; text-align: center;
+  background: #fff; border: 1px solid var(--line); border-radius: 24px;
+  padding: 48px 34px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.calendar-card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--grad);
+}
+.cal-icon {
+  display: inline-grid; place-items: center; width: 72px; height: 72px; margin-bottom: 18px;
+  border-radius: 20px; background: var(--grad-soft); font-size: 2rem;
+}
+.calendar-card h3 { font-size: 1.7rem; font-weight: 700; margin-bottom: 10px; }
+.calendar-card p { color: var(--muted); margin-bottom: 26px; }
+
+/* ---------- CTA Pesan & Kesan ---------- */
+.pesan-banner {
+  position: relative; overflow: hidden; text-align: center; color: #fff;
+  background: linear-gradient(130deg, #6a2cc0, #2a4bd7); border-radius: 26px;
+  padding: 60px 30px; box-shadow: var(--shadow);
+}
+.pesan-notes { font-size: 1.8rem; letter-spacing: 12px; opacity: 0.5; margin-bottom: 14px; }
+.pesan-banner h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
+.pesan-banner p { max-width: 540px; margin: 12px auto 28px; opacity: 0.95; font-weight: 300; }
 
 /* ---------- Join ---------- */
 .join-card {
